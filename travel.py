@@ -84,9 +84,20 @@ if "messages" not in st.session_state:
 
 # ---------- DISPLAY CHAT ----------
 for message in st.session_state.messages:
-    if message["role"] != "system":
-        with st.chat_message(message["role"]):
-            st.markdown(message["content"])
+     if message["role"] == "assistant":
+            with st.chat_message("assistant"):
+                st.markdown(
+                    f"<div class='ai-msg'>{message['content']}</div>",
+                    unsafe_allow_html=True
+                )
+
+        else:
+            with st.chat_message("user"):
+                st.markdown(
+                    f"<div class='user-msg'>{message['content']}</div>",
+                    unsafe_allow_html=True
+                )
+
 
 # ---------- CHAT INPUT ----------
 if prompt := st.chat_input("Ask about your next trip ✈️"):
@@ -94,7 +105,10 @@ if prompt := st.chat_input("Ask about your next trip ✈️"):
     st.session_state.messages.append({"role": "user", "content": prompt})
 
     with st.chat_message("user"):
-        st.markdown(prompt)
+        st.markdown(
+            f"<div class='user-msg'>{prompt}</div>",
+            unsafe_allow_html=True
+        )
 
     try:
         completion = client.chat.completions.create(
@@ -119,4 +133,5 @@ if prompt := st.chat_input("Ask about your next trip ✈️"):
         })
 
     except Exception as e:
+
         st.error(e)
