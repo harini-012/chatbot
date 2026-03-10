@@ -90,8 +90,7 @@ for message in st.session_state.messages:
                     f"<div class='ai-msg'>{message['content']}</div>",
                     unsafe_allow_html=True
                 )
-
-        else:
+     else:
             with st.chat_message("user"):
                 st.markdown(
                     f"<div class='user-msg'>{message['content']}</div>",
@@ -135,3 +134,4 @@ if prompt := st.chat_input("Ask about your next trip ✈️"):
     except Exception as e:
 
         st.error(e)
+
