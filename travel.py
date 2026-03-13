@@ -114,7 +114,8 @@ if prompt := st.chat_input("Ask about your next trip ✈️"):
             model="llama-3.1-8b-instant",
             messages=st.session_state.messages,
             temperature=0.7,
-            max_tokens=200
+            max_tokens=1000
+            
         )
 
         response = completion.choices[0].message.content
@@ -134,4 +135,5 @@ if prompt := st.chat_input("Ask about your next trip ✈️"):
     except Exception as e:
 
         st.error(e)
+
 
