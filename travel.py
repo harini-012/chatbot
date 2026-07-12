@@ -89,18 +89,11 @@ Do not answer unrelated questions."""
 
 # ---------- DISPLAY CHAT ----------
 for message in st.session_state.messages:
-     if message["role"] == "assistant":
-            with st.chat_message("assistant"):
-                st.markdown(
-                    f"<div class='ai-msg'>{message['content']}</div>",
-                    unsafe_allow_html=True
-                )
-     else:
-            with st.chat_message("user"):
-                st.markdown(
-                    f"<div class='user-msg'>{message['content']}</div>",
-                    unsafe_allow_html=True
-                )
+    if message["role"] == "system":
+        continue
+
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
 
 
 # ---------- CHAT INPUT ----------
