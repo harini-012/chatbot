@@ -4,7 +4,7 @@ An AI-powered travel assistant built using Streamlit and Groq API . The applicat
 
 Live Demo
 
-https://chatbot-2-r9sq.onrender.com/
+https://chatbot-ph9vsjgxupzsceqj6kappy2.streamlit.app/
 
 Features
 
