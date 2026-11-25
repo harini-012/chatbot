@@ -1,6 +1,6 @@
 Smart AI Travel Assistant
 
-An AI-powered travel assistant built using Streamlit and Groq API (LLaMA 3.1). The application helps users plan trips, explore destinations, generate itineraries, and get travel-related insights through a conversational interface.
+An AI-powered travel assistant built using Streamlit and Groq API . The application helps users plan trips, explore destinations, generate itineraries, and get travel-related insights through a conversational interface.
 
 Live Demo
 
@@ -18,7 +18,7 @@ Restricts responses to travel-related queries
 Tech Stack
 
 Streamlit
-Groq API (LLaMA 3.1-8B)
+Groq API 
 Python
 python-dotenv
 
